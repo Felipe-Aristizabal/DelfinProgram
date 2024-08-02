@@ -22,7 +22,7 @@ public class RecipeChecker : MonoBehaviour
             Debug.LogError("ItemManager not found.");
         }
         
-        DebugRecipeCompletionStatus();
+        // DebugRecipeCompletionStatus();
     }
 
     public void InitializeRecipeCompletionStatus()
@@ -56,6 +56,8 @@ public class RecipeChecker : MonoBehaviour
                 Debug.LogError("Result Transform not found in recipe.");
             }
         }
+        
+        DebugRecipeCompletionStatus();
     }
     
     void CheckRecipeCompletion()
@@ -81,8 +83,12 @@ public class RecipeChecker : MonoBehaviour
                     // Buscar y activar el objeto "Check" en el recetario
                     ActivateRecipeCheck(item.itemName);
 
-                    // Verificar si el nivel está completo
-                    CheckLevelCompletion();
+                    if (item.isLastTier)
+                    {
+                        // Verificar si el nivel está completo
+                        CheckLevelCompletion();
+                        Debug.Log("Verificando...");
+                    }
 
                     // Debuggear el estado del diccionario después de actualizar
                     // DebugRecipeCompletionStatus();
@@ -116,10 +122,12 @@ public class RecipeChecker : MonoBehaviour
             if (!status)
             {
                 // Si alguna receta no está completada, el nivel no está completo
+                Debug.Log("No está completo");
                 return;
             }
         }
 
+        Debug.Log("Completamos");
         _levelManager.OnLevelCompleted(transform.parent.parent.gameObject);
         transform.parent.parent.gameObject.SetActive(false);
         

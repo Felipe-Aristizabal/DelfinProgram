@@ -85,6 +85,8 @@ public class LevelManager : MonoBehaviour
                 UpdateLevelUI();
                 ActivateCurrentLevel();
 
+                _itemManager.UpdateRecipeChecker();
+                
                 // Ocultar la animación de nivel completado
                 levelCompletedAnimationGameObject.SetActive(false);
             }

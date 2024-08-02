@@ -76,13 +76,9 @@ public class ItemManager : MonoBehaviour
     public void SetCurrentLevel(int level)
     {
         currentLevel = level;
+        UpdateRecipeChecker();
+        
         UpdateRecipeDictionary();
-
-        // Reinicializar el estado de las recetas en el RecipeChecker
-        if (recipeChecker != null)
-        {
-            recipeChecker.InitializeRecipeCompletionStatus();
-        }
     }
 
     // Actualizar el diccionario de recetas basado en el nivel actual
@@ -101,6 +97,17 @@ public class ItemManager : MonoBehaviour
                 }
                 break;
             }
+        }
+    }
+
+    public void UpdateRecipeChecker()
+    {
+        recipeChecker = FindObjectOfType<RecipeChecker>();
+        
+        // Reinicializar el estado de las recetas en el RecipeChecker
+        if (recipeChecker != null)
+        {
+            recipeChecker.InitializeRecipeCompletionStatus();
         }
     }
 }

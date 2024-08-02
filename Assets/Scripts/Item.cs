@@ -7,6 +7,7 @@ public class Item
     public string itemName;
     public Sprite sprite;
     public bool isUsedInRecipe;
+    public bool isLastTier;
 }
 
 [System.Serializable]

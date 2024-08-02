@@ -265,6 +265,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &1523138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +460,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &29756581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,6 +805,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &54108086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1196,6 +1199,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &113159364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2238,6 +2242,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &382573399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2455,6 +2460,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &441755935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3043,6 +3049,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &495790784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3437,712 +3444,876 @@ MonoBehaviour:
     - itemName: Wood
       sprite: {fileID: 21300000, guid: 65c59ccc59b5690458cb9e5324edc5dc, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     - itemName: Copper_Ore
       sprite: {fileID: 21300000, guid: c8977b1ade051034dbfed01d0465020e, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     - itemName: Iron_Ore
       sprite: {fileID: 21300000, guid: 1ba4a79a868e4ef43a8e3bf9f781c4c7, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     recipes:
     - item1:
         itemName: Wood
         sprite: {fileID: 21300000, guid: 65c59ccc59b5690458cb9e5324edc5dc, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Wood
         sprite: {fileID: 21300000, guid: 65c59ccc59b5690458cb9e5324edc5dc, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Wood2
         sprite: {fileID: 21300000, guid: 3243b84d853ac784194ef38a92dbda28, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Wood2
         sprite: {fileID: 21300000, guid: 3243b84d853ac784194ef38a92dbda28, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Wood
         sprite: {fileID: 21300000, guid: 65c59ccc59b5690458cb9e5324edc5dc, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Wood3
         sprite: {fileID: 21300000, guid: 63af52b5b92b10c4594f1085a1a0ab94, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Copper_Ore
         sprite: {fileID: 21300000, guid: c8977b1ade051034dbfed01d0465020e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Copper_Ore
         sprite: {fileID: 21300000, guid: c8977b1ade051034dbfed01d0465020e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Copper_Bar
         sprite: {fileID: 21300000, guid: b7aa4f8b90b5cb74aabf7bebc3707840, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Copper_Bar
         sprite: {fileID: 21300000, guid: b7aa4f8b90b5cb74aabf7bebc3707840, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Copper_Bar
         sprite: {fileID: 21300000, guid: b7aa4f8b90b5cb74aabf7bebc3707840, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Copper_Bar2
         sprite: {fileID: 21300000, guid: 8516b3ca2292fe44bbec2921421e4468, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Copper_Bar2
         sprite: {fileID: 21300000, guid: 8516b3ca2292fe44bbec2921421e4468, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Copper_Bar
         sprite: {fileID: 21300000, guid: b7aa4f8b90b5cb74aabf7bebc3707840, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Copper_Bar3
         sprite: {fileID: 21300000, guid: 4c53ef38a6f02f840850cce66380f6b9, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Iron_Ore
         sprite: {fileID: 21300000, guid: 1ba4a79a868e4ef43a8e3bf9f781c4c7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Iron_Ore
         sprite: {fileID: 21300000, guid: 1ba4a79a868e4ef43a8e3bf9f781c4c7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Iron_Bar
         sprite: {fileID: 21300000, guid: b2352df64abcd62489bcc3094ec726e7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Iron_Bar
         sprite: {fileID: 21300000, guid: b2352df64abcd62489bcc3094ec726e7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Iron_Bar
         sprite: {fileID: 21300000, guid: b2352df64abcd62489bcc3094ec726e7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Iron_Bar2
         sprite: {fileID: 21300000, guid: 0aa23e57d279cc940afee31d6d8e470e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Iron_Bar
         sprite: {fileID: 21300000, guid: b2352df64abcd62489bcc3094ec726e7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Iron_Bar2
         sprite: {fileID: 21300000, guid: 0aa23e57d279cc940afee31d6d8e470e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Iron_Bar3
         sprite: {fileID: 21300000, guid: b401ae28f60cc914e823183a169cadec, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
   - level: 1
     items:
     - itemName: Wood
       sprite: {fileID: 21300000, guid: 65c59ccc59b5690458cb9e5324edc5dc, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     - itemName: Copper_Ore
       sprite: {fileID: 21300000, guid: c8977b1ade051034dbfed01d0465020e, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     - itemName: Iron_Ore
       sprite: {fileID: 21300000, guid: 1ba4a79a868e4ef43a8e3bf9f781c4c7, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     recipes:
     - item1:
         itemName: Wood
         sprite: {fileID: 21300000, guid: 65c59ccc59b5690458cb9e5324edc5dc, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Wood
         sprite: {fileID: 21300000, guid: 65c59ccc59b5690458cb9e5324edc5dc, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Wood2
         sprite: {fileID: 21300000, guid: 3243b84d853ac784194ef38a92dbda28, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Wood2
         sprite: {fileID: 21300000, guid: 3243b84d853ac784194ef38a92dbda28, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Wood
         sprite: {fileID: 21300000, guid: 65c59ccc59b5690458cb9e5324edc5dc, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Wood3
         sprite: {fileID: 21300000, guid: 63af52b5b92b10c4594f1085a1a0ab94, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Copper_Ore
         sprite: {fileID: 21300000, guid: c8977b1ade051034dbfed01d0465020e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Copper_Ore
         sprite: {fileID: 21300000, guid: c8977b1ade051034dbfed01d0465020e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Copper_Bar
         sprite: {fileID: 21300000, guid: b7aa4f8b90b5cb74aabf7bebc3707840, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Copper_Bar
         sprite: {fileID: 21300000, guid: b7aa4f8b90b5cb74aabf7bebc3707840, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Copper_Bar
         sprite: {fileID: 21300000, guid: b7aa4f8b90b5cb74aabf7bebc3707840, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Copper_Bar2
         sprite: {fileID: 21300000, guid: 8516b3ca2292fe44bbec2921421e4468, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Copper_Bar2
         sprite: {fileID: 21300000, guid: 8516b3ca2292fe44bbec2921421e4468, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Copper_Bar
         sprite: {fileID: 21300000, guid: b7aa4f8b90b5cb74aabf7bebc3707840, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Copper_Bar3
         sprite: {fileID: 21300000, guid: 4c53ef38a6f02f840850cce66380f6b9, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Iron_Ore
         sprite: {fileID: 21300000, guid: 1ba4a79a868e4ef43a8e3bf9f781c4c7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Iron_Ore
         sprite: {fileID: 21300000, guid: 1ba4a79a868e4ef43a8e3bf9f781c4c7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Iron_Bar
         sprite: {fileID: 21300000, guid: b2352df64abcd62489bcc3094ec726e7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Iron_Bar
         sprite: {fileID: 21300000, guid: b2352df64abcd62489bcc3094ec726e7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Iron_Bar
         sprite: {fileID: 21300000, guid: b2352df64abcd62489bcc3094ec726e7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Iron_Bar2
         sprite: {fileID: 21300000, guid: 0aa23e57d279cc940afee31d6d8e470e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Iron_Bar
         sprite: {fileID: 21300000, guid: b2352df64abcd62489bcc3094ec726e7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Iron_Bar2
         sprite: {fileID: 21300000, guid: 0aa23e57d279cc940afee31d6d8e470e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Iron_Bar3
         sprite: {fileID: 21300000, guid: b401ae28f60cc914e823183a169cadec, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Wood2
         sprite: {fileID: 21300000, guid: 3243b84d853ac784194ef38a92dbda28, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Iron_Bar3
         sprite: {fileID: 21300000, guid: b401ae28f60cc914e823183a169cadec, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Sword
         sprite: {fileID: 21300000, guid: 009d4fc67f3ecc341a5229c548eea9a0, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Wood2
         sprite: {fileID: 21300000, guid: 3243b84d853ac784194ef38a92dbda28, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Iron_Bar2
         sprite: {fileID: 21300000, guid: 0aa23e57d279cc940afee31d6d8e470e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Axe
         sprite: {fileID: 21300000, guid: d69b3d2126ca599449d43b95df828fb2, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Wood3
         sprite: {fileID: 21300000, guid: 63af52b5b92b10c4594f1085a1a0ab94, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Iron_Bar2
         sprite: {fileID: 21300000, guid: 0aa23e57d279cc940afee31d6d8e470e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Shield
         sprite: {fileID: 21300000, guid: c67f6060700f79d4f842b3632c073ff9, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Wood
         sprite: {fileID: 21300000, guid: 65c59ccc59b5690458cb9e5324edc5dc, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Iron_Bar3
         sprite: {fileID: 21300000, guid: b401ae28f60cc914e823183a169cadec, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Mace
         sprite: {fileID: 21300000, guid: eb979bdcd9c0bfa41811e478c6e2db73, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Iron_Bar2
         sprite: {fileID: 21300000, guid: 0aa23e57d279cc940afee31d6d8e470e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Copper_Bar
         sprite: {fileID: 21300000, guid: b7aa4f8b90b5cb74aabf7bebc3707840, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Plate_Helmet
         sprite: {fileID: 21300000, guid: eddb0f61210d2f4429ae92bc08d1b3ba, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Iron_Bar3
         sprite: {fileID: 21300000, guid: b401ae28f60cc914e823183a169cadec, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Copper_Bar2
         sprite: {fileID: 21300000, guid: 8516b3ca2292fe44bbec2921421e4468, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Plate_Chest
         sprite: {fileID: 21300000, guid: c9d48411a39cdc9429fca1da96828e34, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Iron_Bar
         sprite: {fileID: 21300000, guid: b2352df64abcd62489bcc3094ec726e7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Copper_Bar
         sprite: {fileID: 21300000, guid: b7aa4f8b90b5cb74aabf7bebc3707840, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Plate_Gloves
         sprite: {fileID: 21300000, guid: b7e5b4072d83c234ab6819bf4fa504ed, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Iron_Bar2
         sprite: {fileID: 21300000, guid: 0aa23e57d279cc940afee31d6d8e470e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Copper_Bar3
         sprite: {fileID: 21300000, guid: 4c53ef38a6f02f840850cce66380f6b9, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Plate_Pants
         sprite: {fileID: 21300000, guid: 69aaf000ffeac1d428b655ee0b268225, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Iron_Bar2
         sprite: {fileID: 21300000, guid: 0aa23e57d279cc940afee31d6d8e470e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Copper_Bar2
         sprite: {fileID: 21300000, guid: 8516b3ca2292fe44bbec2921421e4468, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Plate_Boots
         sprite: {fileID: 21300000, guid: 57e55d9ab75fec140a903522d5acf84e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
   - level: 2
     items:
     - itemName: Fragment_Red
       sprite: {fileID: 21300000, guid: 73d2289dfe35c4143ad7989dfed82c22, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     - itemName: Fragment_Blue
       sprite: {fileID: 21300000, guid: 24c5248380df500459a91351e750bd86, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     - itemName: Fragment_Green
       sprite: {fileID: 21300000, guid: e13a9eba8ea5c90479abcca2689deb54, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     - itemName: Leather
       sprite: {fileID: 21300000, guid: 0697b5c413281a149bc97567d1fb828b, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     - itemName: Potion_Blue
       sprite: {fileID: 21300000, guid: 201a67be029f4fb46881bf487e9da212, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     - itemName: Herb_Green
       sprite: {fileID: 21300000, guid: d8f1a5d2c52d9024ea93758c79f03286, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     - itemName: Herb_Red
       sprite: {fileID: 21300000, guid: 1402460bca3f72347991545ea30311da, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     recipes:
     - item1:
         itemName: Fragment_Red
         sprite: {fileID: 21300000, guid: 73d2289dfe35c4143ad7989dfed82c22, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Fragment_Red
         sprite: {fileID: 21300000, guid: 73d2289dfe35c4143ad7989dfed82c22, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Fragment_Red2
         sprite: {fileID: 21300000, guid: 3a93d12a1aef3db438def9fe63f3fe2f, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Fragment_Red
         sprite: {fileID: 21300000, guid: 73d2289dfe35c4143ad7989dfed82c22, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Fragment_Red2
         sprite: {fileID: 21300000, guid: 3a93d12a1aef3db438def9fe63f3fe2f, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Jem_Red
         sprite: {fileID: 21300000, guid: b792c9b7782099c40b62af76390c185e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Jem_Red
         sprite: {fileID: 21300000, guid: b792c9b7782099c40b62af76390c185e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Leather
         sprite: {fileID: 21300000, guid: 0697b5c413281a149bc97567d1fb828b, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Necklace_Red
         sprite: {fileID: 21300000, guid: 1648666e0373ee3418afad29e16779fe, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Fragment_Blue
         sprite: {fileID: 21300000, guid: 24c5248380df500459a91351e750bd86, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Fragment_Blue
         sprite: {fileID: 21300000, guid: 24c5248380df500459a91351e750bd86, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Fragment_Blue2
         sprite: {fileID: 21300000, guid: 7e4ddb16097dcd6449c2bc09e7b65fb7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Fragment_Blue2
         sprite: {fileID: 21300000, guid: 7e4ddb16097dcd6449c2bc09e7b65fb7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Fragment_Blue
         sprite: {fileID: 21300000, guid: 24c5248380df500459a91351e750bd86, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Jem_Blue
         sprite: {fileID: 21300000, guid: 8c5bcc4aa7080664cbcd40ee22691703, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Jem_Blue
         sprite: {fileID: 21300000, guid: 8c5bcc4aa7080664cbcd40ee22691703, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Leather
         sprite: {fileID: 21300000, guid: 0697b5c413281a149bc97567d1fb828b, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Necklace_Blue
         sprite: {fileID: 21300000, guid: 12023ca59489321438c3eae4ede1d05c, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Fragment_Green
         sprite: {fileID: 21300000, guid: e13a9eba8ea5c90479abcca2689deb54, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Fragment_Green
         sprite: {fileID: 21300000, guid: e13a9eba8ea5c90479abcca2689deb54, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Fragment_Green2
         sprite: {fileID: 21300000, guid: 8ef86bafee2fe444696bf7bdb0d8f7a0, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Fragment_Green2
         sprite: {fileID: 21300000, guid: 8ef86bafee2fe444696bf7bdb0d8f7a0, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Fragment_Green
         sprite: {fileID: 21300000, guid: e13a9eba8ea5c90479abcca2689deb54, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Jem_Green
         sprite: {fileID: 21300000, guid: 527c3929a37978b4aa56e8d45f3d5464, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Jem_Green
         sprite: {fileID: 21300000, guid: 527c3929a37978b4aa56e8d45f3d5464, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Leather
         sprite: {fileID: 21300000, guid: 0697b5c413281a149bc97567d1fb828b, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Necklace_Green
         sprite: {fileID: 21300000, guid: 28e616836acd62d439edd304b92cb635, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Jem_Green
         sprite: {fileID: 21300000, guid: 527c3929a37978b4aa56e8d45f3d5464, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Leather
         sprite: {fileID: 21300000, guid: 0697b5c413281a149bc97567d1fb828b, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Necklace_Green
         sprite: {fileID: 21300000, guid: 28e616836acd62d439edd304b92cb635, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Necklace_Red
         sprite: {fileID: 21300000, guid: 1648666e0373ee3418afad29e16779fe, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Jem_Multicolor
         sprite: {fileID: 21300000, guid: 7de1d120d33cfbf42b268e589b8faf21, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Magic_Necklace
         sprite: {fileID: 21300000, guid: 8e859c149e0cd814ea9acc8581953bd6, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Necklace_Blue
         sprite: {fileID: 21300000, guid: 12023ca59489321438c3eae4ede1d05c, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Jem_Multicolor
         sprite: {fileID: 21300000, guid: 7de1d120d33cfbf42b268e589b8faf21, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Magic_Necklace
         sprite: {fileID: 21300000, guid: 8e859c149e0cd814ea9acc8581953bd6, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Necklace_Green
         sprite: {fileID: 21300000, guid: 28e616836acd62d439edd304b92cb635, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Jem_Multicolor
         sprite: {fileID: 21300000, guid: 7de1d120d33cfbf42b268e589b8faf21, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Magic_Necklace
         sprite: {fileID: 21300000, guid: 8e859c149e0cd814ea9acc8581953bd6, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Potion_Blue
         sprite: {fileID: 21300000, guid: 201a67be029f4fb46881bf487e9da212, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Herb_Red
         sprite: {fileID: 21300000, guid: 1402460bca3f72347991545ea30311da, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Potion_Red
         sprite: {fileID: 21300000, guid: c814783ced6f83a4b8c10902c9c77558, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Potion_Blue
         sprite: {fileID: 21300000, guid: 201a67be029f4fb46881bf487e9da212, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Herb_Green
         sprite: {fileID: 21300000, guid: d8f1a5d2c52d9024ea93758c79f03286, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Potion_Green
         sprite: {fileID: 21300000, guid: 8914f00fdd1d6c647a7ac3b6d88c5659, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Potion_Red
         sprite: {fileID: 21300000, guid: c814783ced6f83a4b8c10902c9c77558, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Potion_Green
         sprite: {fileID: 21300000, guid: 8914f00fdd1d6c647a7ac3b6d88c5659, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Potion_Multicolor
         sprite: {fileID: 21300000, guid: d7a09e8f99909a140968a482dcd11068, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Jem_Red
         sprite: {fileID: 21300000, guid: b792c9b7782099c40b62af76390c185e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Potion_Multicolor
         sprite: {fileID: 21300000, guid: 8914f00fdd1d6c647a7ac3b6d88c5659, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Jem_Multicolor
         sprite: {fileID: 21300000, guid: 7de1d120d33cfbf42b268e589b8faf21, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Jem_Blue
         sprite: {fileID: 21300000, guid: 8c5bcc4aa7080664cbcd40ee22691703, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Potion_Multicolor
         sprite: {fileID: 21300000, guid: 8914f00fdd1d6c647a7ac3b6d88c5659, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Jem_Multicolor
         sprite: {fileID: 21300000, guid: 7de1d120d33cfbf42b268e589b8faf21, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Jem_Green
         sprite: {fileID: 21300000, guid: 527c3929a37978b4aa56e8d45f3d5464, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Potion_Multicolor
         sprite: {fileID: 21300000, guid: 8914f00fdd1d6c647a7ac3b6d88c5659, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Jem_Multicolor
         sprite: {fileID: 21300000, guid: 7de1d120d33cfbf42b268e589b8faf21, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
   - level: 3
     items:
     - itemName: Flower_Blue
       sprite: {fileID: 21300000, guid: fe9206383b6d8cc40ab3685c158bf99d, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     - itemName: Flower_Red
       sprite: {fileID: 21300000, guid: 707545fb132aed646bdaf12831b9aaf5, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     - itemName: Leather
       sprite: {fileID: 21300000, guid: 0697b5c413281a149bc97567d1fb828b, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     - itemName: Iron_Ore
       sprite: {fileID: 21300000, guid: 1ba4a79a868e4ef43a8e3bf9f781c4c7, type: 3}
       isUsedInRecipe: 0
+      isLastTier: 0
     recipes:
     - item1:
         itemName: Flower_Red
         sprite: {fileID: 21300000, guid: 707545fb132aed646bdaf12831b9aaf5, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Leather
         sprite: {fileID: 21300000, guid: 0697b5c413281a149bc97567d1fb828b, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Cloth_Red
         sprite: {fileID: 21300000, guid: e0268741fe936f8489777894fcaf81f7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Flower_Blue
         sprite: {fileID: 21300000, guid: fe9206383b6d8cc40ab3685c158bf99d, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Leather
         sprite: {fileID: 21300000, guid: 0697b5c413281a149bc97567d1fb828b, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Cloth_Blue
         sprite: {fileID: 21300000, guid: 7d0db3a719d4ecb4d944bab596d811ab, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Cloth_Blue
         sprite: {fileID: 21300000, guid: 7d0db3a719d4ecb4d944bab596d811ab, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Cloth_Red
         sprite: {fileID: 21300000, guid: e0268741fe936f8489777894fcaf81f7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Cloth_Magic
         sprite: {fileID: 21300000, guid: 4acadcd00d808f74a954ec2df20ed3f2, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Cloth_Magic
         sprite: {fileID: 21300000, guid: 4acadcd00d808f74a954ec2df20ed3f2, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Cloth_Magic
         sprite: {fileID: 21300000, guid: 4acadcd00d808f74a954ec2df20ed3f2, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Cloth_Magic2
         sprite: {fileID: 21300000, guid: 5914e8fd4b97e5d449018825e947a689, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
     - item1:
         itemName: Cloth_Magic
         sprite: {fileID: 21300000, guid: 4acadcd00d808f74a954ec2df20ed3f2, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Iron_Bar
         sprite: {fileID: 21300000, guid: b2352df64abcd62489bcc3094ec726e7, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Magic_Gloves
         sprite: {fileID: 21300000, guid: 266c6672eaea23248813e9fd4517aa5f, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Cloth_Magic2
         sprite: {fileID: 21300000, guid: 5914e8fd4b97e5d449018825e947a689, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Leather
         sprite: {fileID: 21300000, guid: 0697b5c413281a149bc97567d1fb828b, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Magic_Pants
         sprite: {fileID: 21300000, guid: a27aa50f2bcbc2646a8c6f4f579dac1d, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Cloth_Magic2
         sprite: {fileID: 21300000, guid: 5914e8fd4b97e5d449018825e947a689, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Iron_Bar2
         sprite: {fileID: 21300000, guid: 0aa23e57d279cc940afee31d6d8e470e, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Magic_Boots
         sprite: {fileID: 21300000, guid: f25b16c7add794b4e89be33447aaf8a4, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Cloth_Magic
         sprite: {fileID: 21300000, guid: 4acadcd00d808f74a954ec2df20ed3f2, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Leather
         sprite: {fileID: 21300000, guid: 0697b5c413281a149bc97567d1fb828b, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Magic_Helmet
         sprite: {fileID: 21300000, guid: 1e16518344dcc984a819375fb6a17d71, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 1
     - item1:
         itemName: Cloth_Magic2
         sprite: {fileID: 21300000, guid: 5914e8fd4b97e5d449018825e947a689, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       item2:
         itemName: Magic_Necklace
         sprite: {fileID: 21300000, guid: 8e859c149e0cd814ea9acc8581953bd6, type: 3}
         isUsedInRecipe: 0
+        isLastTier: 0
       result:
         itemName: Magic_Chest
         sprite: {fileID: 21300000, guid: b817779f7fb33f94a85fd94a5df90287, type: 3}
         isUsedInRecipe: 0
-    - item1:
-        itemName: Cloth_Magic2
-        sprite: {fileID: 21300000, guid: 5914e8fd4b97e5d449018825e947a689, type: 3}
-        isUsedInRecipe: 0
-      item2:
-        itemName: Magic_Necklace
-        sprite: {fileID: 21300000, guid: 8e859c149e0cd814ea9acc8581953bd6, type: 3}
-        isUsedInRecipe: 0
-      result:
-        itemName: Magic_Chest
-        sprite: {fileID: 21300000, guid: b817779f7fb33f94a85fd94a5df90287, type: 3}
-        isUsedInRecipe: 0
+        isLastTier: 1
 --- !u!4 &550029384
 Transform:
   m_ObjectHideFlags: 0
@@ -4394,6 +4565,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &581748133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4802,6 +4974,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &617915901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5060,6 +5233,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &628414223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5821,6 +5995,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &759727742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6081,6 +6256,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &761103839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6499,6 +6675,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &805248156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6774,6 +6951,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &822750941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8870,6 +9048,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &1271127634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9064,6 +9243,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &1358120225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9909,6 +10089,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &1455805684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10103,6 +10284,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &1462129118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10448,6 +10630,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &1512907458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10888,6 +11071,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &1594757618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11760,6 +11944,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &1818702209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12306,6 +12491,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &1863554548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13390,6 +13576,7 @@ MonoBehaviour:
     itemName: 
     sprite: {fileID: 0}
     isUsedInRecipe: 0
+    isLastTier: 0
 --- !u!114 &2092444945
 MonoBehaviour:
   m_ObjectHideFlags: 0
