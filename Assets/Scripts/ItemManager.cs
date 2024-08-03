@@ -31,7 +31,11 @@ public class ItemManager : MonoBehaviour
 
                 // Disparar el evento cuando se combina un ítem
                 OnItemsCombined?.Invoke();
-
+                if (resultItem.isLastTier)
+                {
+                    recipeChecker.ReplaceTier3ItemWithTier1(resultItem);
+                } Debug.Log("El item no es tier 3");
+                
                 return resultItem; // Devolver el ítem resultante si la combinación es válida
             }
         }

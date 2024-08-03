@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class RecipeChecker : MonoBehaviour
 {
     private ItemManager itemManager;
     private Dictionary<string, bool> recipeCompletionStatus; // Para rastrear el estado de las recetas
     [SerializeField] private LevelManager _levelManager;
+
+    private Transform gridTransform;
     
     void Start()
     {
@@ -56,8 +59,9 @@ public class RecipeChecker : MonoBehaviour
                 Debug.LogError("Result Transform not found in recipe.");
             }
         }
-        
-        DebugRecipeCompletionStatus();
+        gridTransform = transform.parent.parent.GetChild(0).transform;
+        Debug.Log(gridTransform);
+        // DebugRecipeCompletionStatus();
     }
     
     void CheckRecipeCompletion()
@@ -86,7 +90,7 @@ public class RecipeChecker : MonoBehaviour
                     if (item.isLastTier)
                     {
                         // Verificar si el nivel está completo
-                        CheckLevelCompletion();
+                        bool levelComplete = CheckLevelCompletion();
                         Debug.Log("Verificando...");
                     }
 
@@ -115,26 +119,27 @@ public class RecipeChecker : MonoBehaviour
         }
     }
 
-    private void CheckLevelCompletion()
+    private bool CheckLevelCompletion()
     {
         foreach (var status in recipeCompletionStatus.Values)
         {
             if (!status)
             {
                 // Si alguna receta no está completada, el nivel no está completo
-                Debug.Log("No está completo");
-                return;
+                // Debug.Log("No está completo");
+                return false;
             }
         }
 
-        Debug.Log("Completamos");
+        // Debug.Log("Completamos");
         _levelManager.OnLevelCompleted(transform.parent.parent.gameObject);
         transform.parent.parent.gameObject.SetActive(false);
-        
+
         // Limpiar el diccionario de recetas al completar el nivel
         recipeCompletionStatus.Clear();
-        
+
         // Debug.Log("Level Complete!");
+        return true;
     }
 
     private Transform FindChildByName(Transform parent, string nameToMatch)
@@ -158,6 +163,92 @@ public class RecipeChecker : MonoBehaviour
         }
     }
 
+    public void ReplaceTier3ItemWithTier1(Item tier3Item)
+    {
+        if (tier3Item != null)
+        {
+            StartCoroutine(WaitAndReplace(tier3Item));
+        }
+    }
+
+    private IEnumerator WaitAndReplace(Item tier3Item)
+    {
+        yield return new WaitForSeconds(2);
+
+        Item leastFrequentTier1Item = GetLeastFrequentTier1Item();
+
+        if (leastFrequentTier1Item != null)
+        {
+            ReplaceItemInGrid(tier3Item, leastFrequentTier1Item);
+        } else { Debug.Log("No se encontró el item que menos aparece en el grid"); }
+    }
+
+    private Item GetLeastFrequentTier1Item()
+    {
+        Dictionary<Item, int> itemCounts = new Dictionary<Item, int>();
+
+        foreach (Item tier1Item in itemManager.GetItemsForCurrentLevel())
+        {
+            itemCounts[tier1Item] = 0;
+        }
+
+        // Contar cuántas veces aparece cada ítem de tier 1 en el grid
+        foreach (Transform slot in gridTransform)
+        {
+            ItemComponent itemComponent = slot.GetComponentInChildren<ItemComponent>();
+            if (itemComponent != null && itemComponent.item != null && itemCounts.ContainsKey(itemComponent.item))
+            {
+                itemCounts[itemComponent.item]++;
+            }
+        }
+
+        // Mostrar el conteo de cada ítem
+        foreach (var itemCount in itemCounts)
+        {
+            Debug.Log($"Item: {itemCount.Key.itemName}, Count: {itemCount.Value}");
+        }
+
+        Item leastFrequentItem = null;
+        int minCount = int.MaxValue;
+
+        // Encontrar el ítem con el conteo más bajo
+        foreach (var itemCount in itemCounts)
+        {
+            if (itemCount.Value < minCount)
+            {
+                minCount = itemCount.Value;
+                leastFrequentItem = itemCount.Key;
+            }
+        }
+
+        // Mostrar cuál es el ítem menos frecuente
+        if (leastFrequentItem != null)
+        {
+            Debug.Log($"Least Frequent Item: {leastFrequentItem.itemName}, Count: {minCount}");
+        }
+        else
+        {
+            Debug.Log("No tier 1 items found in the grid.");
+        }
+
+        return leastFrequentItem;
+    }
+
+
+    private void ReplaceItemInGrid(Item oldItem, Item newItem)
+    {
+        foreach (Transform slot in gridTransform)
+        {
+            ItemComponent itemComponent = slot.GetComponentInChildren<ItemComponent>();
+            if (itemComponent != null && itemComponent.item == oldItem)
+            {
+                itemComponent.item = newItem;
+                slot.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = newItem.sprite;
+                break;
+            } 
+        }
+    }
+    
     private void OnDestroy()
     {
         if (itemManager != null)
