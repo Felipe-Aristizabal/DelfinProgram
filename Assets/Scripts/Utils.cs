@@ -14,7 +14,7 @@ public class Utils : MonoBehaviour
 
     public void OpenFirstLevel()
     {
-        SceneManager.LoadScene("Levels");
+        SceneManager.LoadScene("LevelsUI");
     }
     
     public void OpenMenuCanvas(GameObject gameObjectToActivate)
@@ -29,11 +29,9 @@ public class Utils : MonoBehaviour
         mainMenuGameObject.SetActive(true);
     }
 
-    public void OpenSpecificLevel(GameObject levelToActivate)
+    public void OpenSpecificLevel(string levelToActivate)
     {
-        uiLevelsToDeactivate.gameObject.SetActive(false);
-        levelToActivate.SetActive(true);
-        _itemManager.SetCurrentLevel(GetIndexLevel(this.gameObject));
+        SceneManager.LoadScene(levelToActivate);
     }
 
     private int GetIndexLevel(GameObject childOfIndex)

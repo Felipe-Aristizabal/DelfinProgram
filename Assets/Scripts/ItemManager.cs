@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ItemManager : MonoBehaviour
 {
@@ -7,14 +9,24 @@ public class ItemManager : MonoBehaviour
     private RecipeChecker recipeChecker; // Referencia al RecipeChecker
     private Dictionary<(Item, Item), Item> recipeDictionary; // Diccionario de recetas
     private int currentLevel; // Nivel actual
-
+    private string currenLevelName;
+    
+    [SerializeField] private string[] levelNames; // Nombres de las escenas (Tutorial, Level1, Level2, etc.)
+    [SerializeField] private GameObject buttonNextLevel;
+    [SerializeField] private GameObject buttonMainMenu;
+    
     // Evento que se dispara cuando se completa una combinación de ítems
     public event System.Action OnItemsCombined;
 
     void Start()
     {
         recipeChecker = FindObjectOfType<RecipeChecker>(); // Encontrar el RecipeChecker en la escena
-        SetCurrentLevel(currentLevel); // Inicializar con el nivel actual
+
+        UpdateRecipeDictionary();
+        ObtainCurrentLevel();
+
+        buttonNextLevel.GetComponent<Button>().onClick.AddListener(LoadNextLevelScene);
+        buttonMainMenu.GetComponent<Button>().onClick.AddListener(() => { LoadSpecificScene("MainMenu"); });
     }
 
     // Método para combinar dos ítems
@@ -34,7 +46,11 @@ public class ItemManager : MonoBehaviour
                 if (resultItem.isLastTier)
                 {
                     recipeChecker.ReplaceTier3ItemWithTier1(resultItem);
-                } Debug.Log("El item no es tier 3");
+                }
+                else
+                {
+                    Debug.Log("El item no es tier 3, no se hará reemplazo.");
+                }
                 
                 return resultItem; // Devolver el ítem resultante si la combinación es válida
             }
@@ -76,15 +92,6 @@ public class ItemManager : MonoBehaviour
         return resultItems;
     }
 
-    // Método para establecer el nivel actual y actualizar recetas e ítems
-    public void SetCurrentLevel(int level)
-    {
-        currentLevel = level;
-        UpdateRecipeChecker();
-        
-        UpdateRecipeDictionary();
-    }
-
     // Actualizar el diccionario de recetas basado en el nivel actual
     private void UpdateRecipeDictionary()
     {
@@ -104,14 +111,52 @@ public class ItemManager : MonoBehaviour
         }
     }
 
-    public void UpdateRecipeChecker()
+    private void LoadNextLevelScene()
     {
-        recipeChecker = FindObjectOfType<RecipeChecker>();
-        
-        // Reinicializar el estado de las recetas en el RecipeChecker
-        if (recipeChecker != null)
+        switch (currenLevelName)
         {
-            recipeChecker.InitializeRecipeCompletionStatus();
+            case "Tutorial":
+                LoadSpecificScene("Level1");
+                break;
+            case "Level1":
+                LoadSpecificScene("Level2");
+                break;
+            case "Level2":
+                LoadSpecificScene("Level3");
+                break;
+            default:
+                Debug.Log("No more Levels");
+                break;
+        }
+    }
+    
+    private void LoadSpecificScene(string SceneToLoad)
+    {
+        SceneManager.LoadScene(SceneToLoad);
+    }
+    
+    private void ObtainCurrentLevel()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        switch (currentScene)
+        {
+            case "Level3":
+                currentLevel = 3;
+                currenLevelName = "Level3";
+                break;
+            case "Level2":
+                currentLevel = 2;
+                currenLevelName = "Level2";
+                break;
+            case "Level1":
+                currentLevel = 1;
+                currenLevelName = "Level1";
+                break;
+            default:
+                currentLevel = 0;
+                currenLevelName = "Tutorial";
+                break;
         }
     }
 }

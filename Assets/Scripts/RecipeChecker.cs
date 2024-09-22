@@ -4,6 +4,8 @@ using System.Collections;
 
 public class RecipeChecker : MonoBehaviour
 {
+    public static event System.Action<GameObject> OnLevelCompleted;
+    
     private ItemManager itemManager;
     private Dictionary<string, bool> recipeCompletionStatus; // Para rastrear el estado de las recetas
     [SerializeField] private LevelManager _levelManager;
@@ -12,6 +14,7 @@ public class RecipeChecker : MonoBehaviour
     
     void Start()
     {
+        Debug.Log("RecipeChecker Start");
         itemManager = FindObjectOfType<ItemManager>();
         InitializeRecipeCompletionStatus();
 
@@ -30,7 +33,10 @@ public class RecipeChecker : MonoBehaviour
 
     public void InitializeRecipeCompletionStatus()
     {
+        Debug.Log("Initializing recipe completion status");
+        
         recipeCompletionStatus = new Dictionary<string, bool>();
+        gridTransform = transform.parent.parent.GetChild(0).transform;
 
         foreach (Transform recipe in transform)
         {
@@ -59,8 +65,6 @@ public class RecipeChecker : MonoBehaviour
                 Debug.LogError("Result Transform not found in recipe.");
             }
         }
-        gridTransform = transform.parent.parent.GetChild(0).transform;
-        Debug.Log(gridTransform);
         // DebugRecipeCompletionStatus();
     }
     
@@ -89,9 +93,10 @@ public class RecipeChecker : MonoBehaviour
 
                     if (item.isLastTier)
                     {
-                        // Verificar si el nivel está completo
-                        bool levelComplete = CheckLevelCompletion();
-                        Debug.Log("Verificando...");
+                        if (CheckLevelCompletion())
+                        {
+                            OnLevelCompleted?.Invoke(transform.parent.parent.gameObject);
+                        }
                     }
 
                     // Debuggear el estado del diccionario después de actualizar
