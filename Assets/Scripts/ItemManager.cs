@@ -21,9 +21,9 @@ public class ItemManager : MonoBehaviour
     void Start()
     {
         recipeChecker = FindObjectOfType<RecipeChecker>(); // Encontrar el RecipeChecker en la escena
-
+        
+        GetItemsForCurrentLevel();
         UpdateRecipeDictionary();
-        ObtainCurrentLevel();
 
         buttonNextLevel.GetComponent<Button>().onClick.AddListener(LoadNextLevelScene);
         buttonMainMenu.GetComponent<Button>().onClick.AddListener(() => { LoadSpecificScene("MainMenu"); });
@@ -59,9 +59,15 @@ public class ItemManager : MonoBehaviour
         return null; // Devolver null si la combinación no es válida
     }
 
+    public int GetCurrentLevel()
+    {
+        return currentLevel;
+    }
+    
     // Método para obtener los ítems disponibles para el nivel actual
     public List<Item> GetItemsForCurrentLevel()
     {
+        ObtainCurrentLevel();
         foreach (var levelItem in levelItems)
         {
             if (levelItem.level == currentLevel)
@@ -95,6 +101,7 @@ public class ItemManager : MonoBehaviour
     // Actualizar el diccionario de recetas basado en el nivel actual
     private void UpdateRecipeDictionary()
     {
+        ObtainCurrentLevel();
         recipeDictionary = new Dictionary<(Item, Item), Item>();
 
         foreach (var levelItem in levelItems)

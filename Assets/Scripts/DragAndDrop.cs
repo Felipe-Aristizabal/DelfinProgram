@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -20,6 +21,8 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     void Awake()
     {
+        // Debug.Log("Este script está adjunto al objeto: " + gameObject.name);
+        
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         itemCanvas = GetComponent<Canvas>();
@@ -70,10 +73,13 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     void OnTriggerEnter2D(Collider2D other)
     {
         ItemComponent otherItemComponent = other.GetComponent<ItemComponent>();
-        if (otherItemComponent != null)
+        if (otherItemComponent == null)
         {
-            Combine(otherItemComponent);
+            Debug.LogError("El objeto con el que se intentó combinar no tiene un componente ItemComponent");
+            return;
         }
+
+        Combine(otherItemComponent);
     }
 
     private void Combine(ItemComponent otherItemComponent)
@@ -81,28 +87,38 @@ public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         Item thisItem = GetComponent<ItemComponent>().item;
         Item otherItem = otherItemComponent.item;
         ItemManager itemManager = FindObjectOfType<ItemManager>();
-        
+
+        if (itemManager == null)
+        {
+            Debug.LogError("No se encontró el ItemManager.");
+            return;
+        }
+
         if (thisItem != null && otherItem != null)
         {
             Item combinedItem = itemManager.CombineItems(thisItem, otherItem);
+
             if (combinedItem != null)
             {
                 // Actualizar el ítem del objeto sobre el que se arrastró
                 otherItemComponent.item = combinedItem;
                 otherItemComponent.GetComponent<UnityEngine.UI.Image>().sprite = combinedItem.sprite;
-                
+
                 // Borrar los datos del ítem arrastrado
                 GetComponent<ItemComponent>().ClearItem();
                 
-                // Actualizar mi sprite
-                GetComponent<UnityEngine.UI.Image>().sprite = recipeSlot;
-                
-                itemManager.OnItemsCombined += FindObjectOfType<GridFiller>().FillGrid;
+                // Actualizar el sprite del ítem arrastrado a transparente
+                Image draggedItemImage = GetComponent<UnityEngine.UI.Image>();
+                if (draggedItemImage != null)
+                {
+                    Color color = draggedItemImage.color;
+                    color.a = 0f;  // Hacer el sprite completamente transparente
+                    draggedItemImage.color = color;
+                }
             }
             else
             {
-                // Si no hay combinación, regresar el ítem a su posición original
-                rectTransform.anchoredPosition = OriginalPosition;
+                Debug.Log("No se pudo combinar los ítems.");
             }
         }
     }

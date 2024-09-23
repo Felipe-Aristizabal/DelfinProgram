@@ -93,8 +93,13 @@ public class RecipeChecker : MonoBehaviour
 
                     if (item.isLastTier)
                     {
-                        if (CheckLevelCompletion())
+                        if (CheckLevelCompletion() || item.itemName == "Magic_Necklace")
                         {
+                            _levelManager.OnLevelCompleted(transform.parent.parent.gameObject);
+                            transform.parent.parent.gameObject.SetActive(false);
+
+                            // Limpiar el diccionario de recetas al completar el nivel
+                            recipeCompletionStatus.Clear();
                             OnLevelCompleted?.Invoke(transform.parent.parent.gameObject);
                         }
                     }
@@ -108,6 +113,8 @@ public class RecipeChecker : MonoBehaviour
 
     private void ActivateRecipeCheck(string itemName)
     {
+        string unifiedItemName = GetUnifiedNecklaceName(itemName);
+
         foreach (Transform recipe in transform)
         {
             Transform recipItemsTransform = FindChildByName(recipe, "RecipeItems");
@@ -115,7 +122,7 @@ public class RecipeChecker : MonoBehaviour
             if (resultTransform != null)
             {
                 UnityEngine.UI.Image imageComponent = resultTransform.GetComponent<UnityEngine.UI.Image>();
-                if (imageComponent != null && imageComponent.sprite != null && imageComponent.sprite.name == itemName)
+                if (imageComponent != null && imageComponent.sprite != null && GetUnifiedNecklaceName(imageComponent.sprite.name) == unifiedItemName)
                 {
                     FindChildByName(recipe, "Check").gameObject.SetActive(true);
                     break;
@@ -124,6 +131,15 @@ public class RecipeChecker : MonoBehaviour
         }
     }
 
+    private string GetUnifiedNecklaceName(string itemName1, string itemName2 = "")
+    {
+        if (itemName1.StartsWith("Necklace") || itemName2.StartsWith("Necklace"))
+        {
+            return "Multiple_Necklace";
+        }
+        return itemName1; // Retorna el nombre original si no es un collar
+    }
+    
     private bool CheckLevelCompletion()
     {
         foreach (var status in recipeCompletionStatus.Values)
