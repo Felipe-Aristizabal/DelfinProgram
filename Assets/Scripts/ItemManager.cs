@@ -137,7 +137,7 @@ public class ItemManager : MonoBehaviour
         }
     }
     
-    private void LoadSpecificScene(string SceneToLoad)
+    public void LoadSpecificScene(string SceneToLoad)
     {
         SceneManager.LoadScene(SceneToLoad);
     }
