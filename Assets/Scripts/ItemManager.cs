@@ -61,6 +61,7 @@ public class ItemManager : MonoBehaviour
 
     public int GetCurrentLevel()
     {
+        ObtainCurrentLevel();
         return currentLevel;
     }
     

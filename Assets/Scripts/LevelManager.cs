@@ -39,7 +39,8 @@ public class LevelManager : MonoBehaviour
         Debug.Log("¡Nivel completado!");
         levelCompletedAnimationGameObject.SetActive(true);
 
-        // Avanzar al siguiente nivel después de completar la animación o un pequeño delay
-        Invoke("AdvanceToNextLevel", 2f); 
+        PlayerPrefs.SetInt("CurrentLevel", _itemManager.GetCurrentLevel() + 1);
+        Debug.Log("Playerprefs seteadas con Level:" + _itemManager.GetCurrentLevel());
+        PlayerPrefs.Save();
     }
 }

@@ -96,6 +96,27 @@ public class GridFiller : MonoBehaviour
         }
     }
 
+    public void ClearGridSprites()
+    {
+        foreach (var itemComponent in itemComponents)
+        {
+            // Limpiar el sprite del componente de imagen
+            Image itemImage = itemComponent.GetComponent<Image>();
+            if (itemImage != null)
+            {
+                itemImage.sprite = null; // Establecer el sprite en null
+            }
+
+            // Limpiar el objeto Item del componente
+            itemComponent.item = null;
+        }
+    }
+
+    public void RefillGrid()
+    {
+        ClearGridSprites();
+        FillGrid();
+    }
    
     private void OnDestroy()
     {

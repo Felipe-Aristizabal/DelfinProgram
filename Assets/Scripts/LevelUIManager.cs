@@ -11,6 +11,7 @@ public class LevelUIManager : MonoBehaviour
     {
         // Cargar el nivel actual desde PlayerPrefs (por defecto será 0, el tutorial)
         currentLevel = PlayerPrefs.GetInt("CurrentLevel", 0);
+        Debug.Log("Nivel Actual: " + currentLevel);
         // CompleteLevel(3);
         // ResetProgress();
         UpdateLevelUI();
